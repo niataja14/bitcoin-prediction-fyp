@@ -63,7 +63,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = os.environ.get("API_URL", "http://127.0.0.1:8000/predict")
 
 try:
     response = requests.get(API_URL, timeout=60).json()
